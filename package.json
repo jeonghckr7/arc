@@ -2,19 +2,30 @@
   "name": "arc",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gallant-ritchie-77db24.netlify.app/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "eslint": "^6.8.0",
+    "firebase": "^7.13.2",
+    "gh-pages": "^2.2.0",
+    "moment": "^2.24.0",
+    "query-string": "^6.12.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

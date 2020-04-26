@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter, Route, Switch, Link } from 'react-router-dom';
+import Home from './Home';
+import Board from './board';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <HashRouter>
+    <div>
+      <ul>
+        <li>
+          <Link to="/">홈</Link> {/* Link로 새로 고침안된다 */}
+        </li>
+        <li>
+          <Link to={{
+            pathname: "/board/ib_new1",
+            id: "ib_new1"
+          }}
+            >인터넷방송</Link>
+        </li>
+      </ul>
+      <hr />
+    	<Switch>
+        <Route path="/" exact={true} component={Home} /> {/* exact / 일때만 표시* */}
+        <Route path="/board/:id" component={Board} />
+      </Switch>
     </div>
+    </HashRouter>
   );
-}
+};
 
 export default App;
